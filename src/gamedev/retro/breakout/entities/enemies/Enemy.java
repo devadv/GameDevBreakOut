@@ -6,33 +6,40 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.Color;
 
-
 public class Enemy {
-	
+
 	protected float y;
 	protected float x;
 
-	public Enemy(float x , float y){
-		this.x = x ;
-		this.y = y ;
+	public Enemy(float x, float y) {
+		this.x = x;
+		this.y = y;
 	}
-	
-		
-	public ArrayList<Block> makeRow(float x , float y, int aantal, int size , Color color){
+
+	public ArrayList<Block> makeRow(float x, float y, int aantal, int size,
+			Color color) {
 		ArrayList<Block> blocks = new ArrayList<Block>();
-		
-		for (int i= 0; i < aantal; i++) {
-			blocks.add(new Block(x, y, color,size));
+
+		for (int i = 0; i < aantal; i++) {
+			blocks.add(new Block(x, y, color, size));
 			x += size;
 		}
-		
-		
+
 		return blocks;
-		
+
 	}
 
-	
+	public ArrayList<Block> makeRow(float x, float y, int aantal, int size,
+			Color[] color) {
+		ArrayList<Block> blocks = new ArrayList<Block>();
 
-	
+		for (int i = 0; i < aantal; i++) {
+			blocks.add(new Block(x, y, color[i], size));
+			x += size;
+		}
+
+		return blocks;
+
+	}
 
 }

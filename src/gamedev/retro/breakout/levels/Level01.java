@@ -6,6 +6,7 @@ import gamedev.retro.breakout.entities.enemies.Goomba;
 
 import java.util.ArrayList;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -24,7 +25,7 @@ public class Level01 extends Level {
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		row = new ArrayList<>();
-		row.addAll(makeRow(85, 30, 5));
+		row.addAll(makeRow(200, 30, 1));
 		for (Goomba goomba:row){
 			goomba.init(gc, sbg);
 			
@@ -33,7 +34,7 @@ public class Level01 extends Level {
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		
+		g.setBackground(Color.gray);
 		
 		for (Goomba goomba:row){
 			goomba.render(gc, sbg, g);
