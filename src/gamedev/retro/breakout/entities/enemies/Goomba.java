@@ -30,10 +30,7 @@ public class Goomba extends Enemy{
 		row.addAll(makeRow(x-size*3, y+(size*3), 10, size,new Color(243,153,90)));
 		//begin row 5
 		row.addAll(makeRow(x-size*4, y+(size*4), 1, size,new Color(243,153,90)));
-		row.addAll(makeRow(x-size*3, y+(size*4), 2, size,new Color(75,59,60)));
-		row.addAll(makeRow(x-size, y+(size*4), 6, size,new Color(243,153,90)));
-		row.addAll(makeRow(x+size*5, y+(size*4), 2, size,new Color(75,59,60)));
-		row.addAll(makeRow(x+size*7, y+(size*4), 1, size,new Color(243,153,90)));
+		
 		//end row 5
 	
 	
