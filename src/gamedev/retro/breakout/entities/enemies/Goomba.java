@@ -29,22 +29,39 @@ public class Goomba extends Enemy{
 		row.addAll(makeRow(x-size*2, y+(size*2), 8, size, new Color(243,153,90)));
 		row.addAll(makeRow(x-size*3, y+(size*3), 10, size,new Color(243,153,90)));
 		//begin row 5
-		Color[]color = new Color[12];
-		color[0]= new Color(243,153,90);
-		color[1]= new Color(75,59,60);
-		color[2]= new Color(75,59,60);
-		color[3]= new Color(243,153,90);
-		color[4]= new Color(243,153,90);
-		color[5]= new Color(243,153,90);
-		color[6]= new Color(243,153,90);
-		color[7]= new Color(243,153,90);
-		color[8]= new Color(243,153,90);
-		color[9]= new Color(75,59,60);
-		color[10]= new Color(75,59,60);
-		color[11]= new Color(243,153,90);
-		row.addAll(makeRow(x-size*4, y+size*4 , 12, size, color));
-		
+		Color[]colorRow5 = new Color[12];
+		colorRow5[0]= new Color(243,153,90);
+		colorRow5[1]= new Color(75,59,60);
+		colorRow5[2]= new Color(75,59,60);
+		colorRow5[3]= new Color(243,153,90);
+		colorRow5[4]= new Color(243,153,90);
+		colorRow5[5]= new Color(243,153,90);
+		colorRow5[6]= new Color(243,153,90);
+		colorRow5[7]= new Color(243,153,90);
+		colorRow5[8]= new Color(243,153,90);
+		colorRow5[9]= new Color(75,59,60);
+		colorRow5[10]= new Color(75,59,60);
+		colorRow5[11]= new Color(243,153,90);
+		row.addAll(makeRow(x-size*4, y+size*4 , 12, size, colorRow5));
 		//end row 5
+		//begin row 6
+		Color[] colorRow6 = new Color[14];
+		colorRow6[0]= new Color(243,153,90);
+		colorRow6[1]= new Color(243,153,90);
+		colorRow6[2]= new Color(243,153,90);
+		colorRow6[3]= new Color(234,219,180);
+		colorRow6[4]= new Color(75,59,60);
+		colorRow6[5]= new Color(243,153,90);
+		colorRow6[6]= new Color(243,153,90);
+		colorRow6[7]= new Color(243,153,90);
+		colorRow6[8]= new Color(243,153,90);
+		colorRow6[9]= new Color(75,59,60);
+		colorRow6[10]= new Color(234,219,180);
+		colorRow6[11]= new Color(243,153,90);
+		colorRow6[12]= new Color(243,153,90);
+		colorRow6[13]= new Color(243,153,90);
+		row.addAll(makeRow(x-size*5, y+size*5 , 14, size, colorRow6));
+		
 	
 	
 	}
