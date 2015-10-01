@@ -2,6 +2,7 @@ package gamedev.retro.breakout;
 
 
 import gamedev.retro.breakout.entities.Player;
+import gamedev.retro.breakout.levels.Level;
 import gamedev.retro.breakout.levels.Level01;
 
 import org.newdawn.slick.Color;
@@ -17,7 +18,7 @@ public class Game extends BasicGameState {
 
 	
 	private Player player;
-	private Level01 level01;
+	private Level level01;
 
 
 	public Game(int i) {
@@ -41,7 +42,7 @@ public class Game extends BasicGameState {
 		
 		level01.render(gc, sbg, g);
 		player.render(gc, sbg, g);
-		//drawDebugLines(g, 15);
+		//drawDebugLines(g, 10);
 	}
 
 	@Override
