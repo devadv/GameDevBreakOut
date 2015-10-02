@@ -7,14 +7,17 @@ import java.util.ArrayList;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Level {
 	
 	protected ArrayList<Goomba> goombas;
+	private Image image;
 
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		//image = new Image("res/bg.png");
 		
 
 	}
@@ -35,6 +38,12 @@ public class Level {
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
+		//setBackGround(g);
+		
+	}
+	public void setBackGround(Graphics g){
+		//g.drawImage(image, 0, 0);
+		
 		
 	}
 

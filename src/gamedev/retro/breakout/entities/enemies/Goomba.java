@@ -23,7 +23,7 @@ public class Goomba extends Enemy{
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		row = new ArrayList<>();
-		int size = 15;
+		int size = 30;
 		row.addAll(makeRow(x, y, 4, size, new Color(243 , 153,90)));
 		row.addAll(makeRow(x-size, y+size, 6, size,new Color(243,153,90)));
 		row.addAll(makeRow(x-size*2, y+(size*2), 8, size, new Color(243,153,90)));
@@ -61,6 +61,8 @@ public class Goomba extends Enemy{
 		colorRow6[12]= new Color(243,153,90);
 		colorRow6[13]= new Color(243,153,90);
 		row.addAll(makeRow(x-size*5, y+size*5 , 14, size, colorRow6));
+		//end row 6
+		//begin row 7
 		
 	
 	
