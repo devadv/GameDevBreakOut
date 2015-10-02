@@ -14,10 +14,19 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Level {
 	
 	protected ArrayList<Goomba> goombas;
-	private Image image;
+	protected Image image;
+	
+	public Level() {
+		try {
+			image = new Image("res/bg.png");
+		} catch (SlickException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		//image = new Image("res/bg.png");
+		
 		
 
 	}
@@ -28,7 +37,7 @@ public class Level {
 		
 		for (int i= 0; i < aantal; i++) {
 			goombas.add(new Goomba(x, y));
-			x  +=190;
+			x  +=80;
 		}
 		
 		
@@ -38,11 +47,11 @@ public class Level {
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		//setBackGround(g);
+		
 		
 	}
 	public void setBackGround(Graphics g){
-		//g.drawImage(image, 0, 0);
+		g.drawImage(image, 0, 0);
 		
 		
 	}
