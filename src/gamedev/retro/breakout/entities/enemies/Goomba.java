@@ -23,7 +23,7 @@ public class Goomba extends Enemy{
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		row = new ArrayList<>();
-		int size = 30;
+		int size = 15;
 		row.addAll(makeRow(x, y, 4, size, new Color(243 , 153,90)));
 		row.addAll(makeRow(x-size, y+size, 6, size,new Color(243,153,90)));
 		row.addAll(makeRow(x-size*2, y+(size*2), 8, size, new Color(243,153,90)));
@@ -63,6 +63,50 @@ public class Goomba extends Enemy{
 		row.addAll(makeRow(x-size*5, y+size*5 , 14, size, colorRow6));
 		//end row 6
 		//begin row 7
+		Color[] colorRow7 = new Color[14];
+		colorRow7[0]= new Color(243,153,90); 
+		colorRow7[1]= new Color(243,153,90);
+		colorRow7[2]= new Color(243,153,90);
+		
+		//whiteBlock
+		colorRow7[3]= new Color(234,219,180);
+		
+		//BrownBlock
+		colorRow7[4]= new Color(75,59,60);
+		colorRow7[5]= new Color(75,59,60);
+		colorRow7[6]= new Color(75,59,60);
+		colorRow7[7]= new Color(75,59,60);
+		colorRow7[8]= new Color(75,59,60);
+		colorRow7[9]= new Color(75,59,60);
+	
+		//BeigeBlock
+		colorRow7[10]= new Color(234,219,180);
+		colorRow7[11]= new Color(243,153,90);
+		colorRow7[12]= new Color(243,153,90);
+		colorRow7[13]= new Color(243,153,90);
+		row.addAll(makeRow(x-size*5, y+size*6 , 14, size, colorRow7));
+		
+		//begin row 8
+		Color[] colorRow8 = new Color[16];
+		colorRow8[0]= new Color(243,153,90);
+		colorRow8[1]= new Color(243,153,90);
+		colorRow8[2]= new Color(243,153,90);
+		colorRow8[3]= new Color(243,153,90);
+		colorRow8[4]= new Color(234,219,180);
+		colorRow8[5]= new Color(75,59,60);
+		colorRow8[6]= new Color(234,219,180);
+		colorRow8[7]= new Color(243,153,90);
+		colorRow8[8]= new Color(243,153,90);
+		colorRow8[9]= new Color(234,219,180);
+		colorRow8[10]= new Color(75,59,60);
+		colorRow8[11]= new Color(234,219,180);
+		colorRow8[12]= new Color(234,219,180);
+		colorRow8[13]= new Color(243,153,90);
+		colorRow8[14]= new Color(243,153,90);
+		colorRow8[15]= new Color(243,153,90);
+		
+		row.addAll(makeRow(x-size*+6, y+size*7 ,16, size, colorRow8));
+		
 		
 	
 	

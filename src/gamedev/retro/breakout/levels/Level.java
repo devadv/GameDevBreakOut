@@ -17,7 +17,7 @@ public class Level {
 	private Image image;
 
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		//image = new Image("res/bg.png"); last image
+		//image = new Image("res/bg.png");
 		
 
 	}
