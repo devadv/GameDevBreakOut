@@ -1,6 +1,7 @@
 package gamedev.retro.breakout;
 
 
+import gamedev.retro.breakout.entities.Ball;
 import gamedev.retro.breakout.entities.Player;
 import gamedev.retro.breakout.levels.Level;
 import gamedev.retro.breakout.levels.Level01;
@@ -19,6 +20,7 @@ public class Game extends BasicGameState {
 	
 	private Player player;
 	private Level level01;
+	private Ball ball;
 
 
 	public Game(int i) {
@@ -33,6 +35,8 @@ public class Game extends BasicGameState {
 		level01.init(gc, sbg);
 		player = new Player();
 		player.init(gc, sbg);
+	/*	ball = new Ball();
+		ball.init(gc);*/
 
 	}
 
@@ -42,6 +46,7 @@ public class Game extends BasicGameState {
 		
 		level01.render(gc, sbg, g);
 		player.render(gc, sbg, g);
+		//ball.render(gc, g);
 		//drawDebugLines(g, 15);
 	}
 
@@ -50,6 +55,11 @@ public class Game extends BasicGameState {
 			throws SlickException {
 		player.update(gc, sbg, delta);
 		level01.update(gc, sbg, delta);
+		/*ball.update(gc, delta);
+		
+		if(ball.getBounds().intersects(player.getBounds())){
+			ball.moveUp();
+		}*/
 
 	}
 	public void drawDebugLines(Graphics g, int size) {

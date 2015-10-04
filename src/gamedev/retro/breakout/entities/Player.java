@@ -5,6 +5,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Player {
@@ -13,7 +14,9 @@ public class Player {
 	
 	private float x;
 	private float y;
-	private float speed = 0.2f;
+	private float WIDTH = 70;
+	private float HEIGHT = 15;
+	private float speed = 0.5f;
 
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 			x = gc.getWidth()/2;
@@ -24,7 +27,7 @@ public class Player {
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		g.setColor(Color.red);
-		g.fillRect(x, y, 70, 15);
+		g.fillRect(x, y, WIDTH, HEIGHT);
 		
 
 	}
@@ -34,19 +37,24 @@ public class Player {
 		Input input = gc.getInput();
 
 		if (input.isKeyDown(Input.KEY_LEFT)) {
-			if (x > 50){
+			if (x >1){
 				x = x - speed * delta;
 			}
 
 		}
 		if (input.isKeyDown(Input.KEY_RIGHT)) {
-			if (x<680){
+			if (x<gc.getWidth()-WIDTH){
 				x =x + speed * delta;
 			}
 		
 
 		}
 
+	}
+	
+	public Rectangle getBounds(){
+		return new Rectangle(x,y,WIDTH, HEIGHT);
+		
 	}
 
 }
