@@ -48,8 +48,10 @@ public class Block {
 		// g.fillRect(x, y, size, size);
 		// g.setColor(Color.black);
 		
-
-		image.draw(vX, vY);
+		image.startUse();
+		image.drawEmbedded(vX,vY,size, size);
+		image.endUse();
+		//image.draw(vX, vY);
 		 //g.drawRect(vX, vY, size, size); / gives low frame rate
 
 	}
