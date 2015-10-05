@@ -12,7 +12,7 @@ public class Ball  {
 
 	private float x;
 	private float y;
-	private float speed = 1f;
+	private float speed = 3f;
 	private float width = 20;
 	private float height = 20;
 	private float dy;

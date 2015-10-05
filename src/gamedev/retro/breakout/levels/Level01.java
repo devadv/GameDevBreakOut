@@ -24,10 +24,14 @@ public class Level01 extends Level {
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 
 		row = new ArrayList<>();
-		row.addAll(makeRow(230, 30, 1)); //with 10 items and size block 4px framerate 638
-		//row.addAll(makeRow(30, 70, 10)); //framerate 280
-		//row.addAll(makeRow(30, 110, 10));//framerate 220
-		//row.addAll(makeRow(30, 150, 10));//slow on framerate between 98  - 124
+		row.addAll(makeRow(30, 30, 10)); //with 10 items and size block 4px framerate 638
+		row.addAll(makeRow(30, 70, 10)); //framerate 280
+		row.addAll(makeRow(30, 110, 10));//framerate 220
+		row.addAll(makeRow(30, 150, 10));//slow on framerate between 98  - 124
+		row.addAll(makeRow(30, 190, 10));
+		row.addAll(makeRow(30, 230, 10));
+		row.addAll(makeRow(30, 270, 10));
+		row.addAll(makeRow(30, 310, 10)); // 88 fps with ball
 		for (Goomba goomba : row) {
 			goomba.init(gc, sbg);
 
