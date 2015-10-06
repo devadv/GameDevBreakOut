@@ -4,7 +4,6 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Circle;
 import org.newdawn.slick.geom.Rectangle;
 
 
@@ -12,12 +11,12 @@ public class Ball  {
 
 	private float x;
 	private float y;
-	private float speed = 1f;
-	private float width = 20;
-	private float height = 20;
+	private float speed = 3.5f;
+	private float width = 10;
+	private float height = 10;
 	private float dy;
 	private float dx;
-	private float lives =5;
+	private float lives =3;
 	private boolean gameOver = false;
 	
 
@@ -30,8 +29,8 @@ public class Ball  {
 
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		g.setColor(Color.orange);
-		g.fillArc(x, y, width, height, 0, 360);
+		g.setColor(Color.white);
+		g.fillRect(x, y, width, height);
 		if(gameOver){
 			g.drawString("Game Over",400,400);
 		}
@@ -89,8 +88,8 @@ public class Ball  {
 
 	}
 	
-	public Circle getBounds(){
-		return new Circle(x,y,width/2);
+	public Rectangle getBounds(){
+		return new Rectangle(x,y,width,height);
 	}
 
 	public float getX() {
