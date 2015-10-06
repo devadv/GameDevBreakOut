@@ -55,24 +55,32 @@ public class Game extends BasicGameState {
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
+		ball.setX(player.getX()+25);
+		ball.setY(player.getY()-10);
 		player.update(gc, sbg, delta);
 		level01.update(gc, sbg, delta);
 		ball.update(gc, delta);
+		Input input = gc.getInput();
+		if(input.isKeyPressed(Input.KEY_SPACE)){
+			System.out.println("SPACEKEY");
+			ball.update(gc, delta);
+			ball.moveUp();
+		}
 		
 		if(ball.getBounds().intersects(player.getBounds())){
 			ball.moveUp();
 		}
 
 	}
-	public void drawDebugLines(Graphics g, int size) {
-		int resolutions = 1000;
-		for (int i = 0; i < resolutions; i += size) {
-			g.setColor(Color.darkGray);
-			g.drawLine(i, 0, i, resolutions);
-			g.drawLine(0, i, resolutions, i);
-
-		}
-	}
+//	public void drawDebugLines(Graphics g, int size) {
+//		int resolutions = 1000;
+//		for (int i = 0; i < resolutions; i += size) {
+//			g.setColor(Color.darkGray);
+//			g.drawLine(i, 0, i, resolutions);
+//			g.drawLine(0, i, resolutions, i);
+//
+//		}
+//	}
 	
 	public static Ball getBall() {
 		return ball;

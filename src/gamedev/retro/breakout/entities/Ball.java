@@ -18,11 +18,12 @@ public class Ball  {
 	private float dx;
 	private float lives =3;
 	private boolean gameOver = false;
-	
+	private boolean isMovingLeft = false;
+	private boolean isMovingUp = false;
 
 	public void init(GameContainer gc) throws SlickException {
-		x = 100;
-		y = 100;
+		x = 500;
+		y = 200;
 		dx =speed;
 		dy =speed;
 	}
@@ -69,22 +70,26 @@ public class Ball  {
 	}
 
 	public void moveDown() {
+		setMovingUp(false);
 		dy = +speed;
 
 	}
 
 	public void moveUp() {
+		setMovingUp(true);
 		dy = -speed;
 
 	}
 
 	public void moveLeft() {
 		dx = -speed;
-
+		setMovingLeft(true);
 	}
 
 	public void moveRight() {
 		dx = speed;
+		setMovingLeft(false);
+
 
 	}
 	
@@ -106,6 +111,26 @@ public class Ball  {
 
 	public void setY(float y) {
 		this.y = y;
+	}
+
+
+	public boolean isMovingUp() {
+		return isMovingUp;
+	}
+
+
+	public void setMovingUp(boolean isMovingUp) {
+		this.isMovingUp = isMovingUp;
+	}
+
+
+	public boolean isMovingLeft() {
+		return isMovingLeft;
+	}
+
+
+	public void setMovingLeft(boolean isMovingLeft) {
+		this.isMovingLeft = isMovingLeft;
 	}
 	
 

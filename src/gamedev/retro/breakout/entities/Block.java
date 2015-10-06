@@ -31,7 +31,7 @@ public class Block {
 		g.setColor(color);
 		g.fillRect(x, y, size, size);
 		g.setColor(Color.black);
-//		g.drawRect(x, y, size, size);
+		g.drawRect(x, y, size, size);
 
 	}
 

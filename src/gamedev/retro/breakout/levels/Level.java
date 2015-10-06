@@ -37,7 +37,7 @@ public class Level {
 		
 		for (int i= 0; i < aantal; i++) {
 			goombas.add(new Goomba(x, y));
-			x  +=80;
+			x  +=170;
 		}
 		
 		
