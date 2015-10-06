@@ -23,8 +23,8 @@ public class Goomba extends Enemy{
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		row = new ArrayList<>();
-		int size = 25;
-		row.addAll(makeRow(x, y, 1, size, new Color(243 , 153,90)));
+		int size = 5;
+		row.addAll(makeRow(x, y, 4, size, new Color(243 , 153,90)));
 		row.addAll(makeRow(x-size, y+size, 6, size,new Color(243,153,90)));
 		row.addAll(makeRow(x-size*2, y+(size*2), 8, size, new Color(243,153,90)));
 		row.addAll(makeRow(x-size*3, y+(size*3), 10, size,new Color(243,153,90)));
@@ -107,9 +107,58 @@ public class Goomba extends Enemy{
 		
 		row.addAll(makeRow(x-size*+6, y+size*7 ,16, size, colorRow8));
 		
+		//beginRow 9
+		Color[] colorRow9 = new Color[16];
+		colorRow9[0]= new Color(243,153,90);
+		colorRow9[1]= new Color(243,153,90);
+		colorRow9[2]= new Color(243,153,90);
+		colorRow9[3]= new Color(243,153,90);
+		colorRow9[4]= new Color(234,219,180);
+		colorRow9[5]= new Color(234,219,180);
+		colorRow9[6]= new Color(234,219,180);
+		colorRow9[7]= new Color(243,153,90);
+		colorRow9[8]= new Color(243,153,90);
+		colorRow9[9]= new Color(234,219,180);
+		colorRow9[10]= new Color(234,219,180);
+		colorRow9[11]= new Color(234,219,180);
+		colorRow9[12]= new Color(243,153,90);
+		colorRow9[13]= new Color(243,153,90);
+		colorRow9[14]= new Color(243,153,90);
+		colorRow9[15]= new Color(243,153,90);
+
 		
-	
-	
+		row.addAll(makeRow(x-size*6, y+size*8 ,16, size, colorRow9));
+
+		//beginRow10
+		row.addAll(makeRow(x-size*6, y+(size*9), 16, size,new Color(243,153,90)));
+
+		///beginRow11
+		row.addAll(makeRow(x-size*5, y+(size*10), 4, size,new Color(243,153,90)));
+		row.addAll(makeRow(x-size*1, y+(size*10), 6, size,new Color(234,219,180)));
+		row.addAll(makeRow(x+size*5, y+(size*10), 4, size,new Color(243,153,90)));
+		
+		//beginRow12
+		row.addAll(makeRow(x-size*2, y+(size*11), 8, size,new Color(234,219,180)));
+		
+		//beginRow13
+		row.addAll(makeRow(x-size*2, y+(size*12), 8, size,new Color(234,219,180)));
+		row.addAll(makeRow(x+size*6, y+(size*12), 2, size,new Color(75,59,60)));
+
+		
+		//beginRow14
+		row.addAll(makeRow(x-size*3, y+(size*13), 2, size,new Color(75,59,60)));
+		row.addAll(makeRow(x-size*1, y+(size*13), 5, size,new Color(234,219,180)));
+		row.addAll(makeRow(x+size*4, y+(size*13), 5, size,new Color(75,59,60)));
+		
+		//beginRow 15
+		row.addAll(makeRow(x-size*3, y+(size*14), 3, size,new Color(75,59,60)));
+		row.addAll(makeRow(x,y+(size*14), 3, size,new Color(234,219,180)));
+		row.addAll(makeRow(x+size*3, y+(size*14),6, size,new Color(75,59,60)));
+		
+		//beginRow16
+		row.addAll(makeRow(x-size*2, y+(size*15), 3, size,new Color(75,59,60)));
+		row.addAll(makeRow(x+size*1, y+(size*15), 1, size,new Color(234,219,180)));
+		row.addAll(makeRow(x+size*3, y+(size*15), 5, size,new Color(75,59,60)));
 	}
 
 	
