@@ -39,6 +39,8 @@ public class Game extends BasicGameState {
 		player.init(gc, sbg);
 		ball = new Ball();
 		ball.init(gc);
+		ball.setX(player.getX()+25);
+		ball.setY(player.getY()-10);
 
 	}
 
@@ -55,8 +57,6 @@ public class Game extends BasicGameState {
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
-		ball.setX(player.getX()+25);
-		ball.setY(player.getY()-10);
 		player.update(gc, sbg, delta);
 		level01.update(gc, sbg, delta);
 		ball.update(gc, delta);
