@@ -48,6 +48,12 @@ public class Menu extends BasicGameState {
 		ttf.drawString(320, 375, "Start");
 		ttf.drawString(320, 455, "Hightscore");*/
 
+		
+		ttf.drawString(300, 375, "Start");
+		ttf.drawString(300, 415, "Hightscore");
+		ttf.drawString(300, 460, "Credits");
+
+
 	}
 
 	@Override

@@ -63,11 +63,11 @@ public class Ball  {
 		
 		if (isMovingUp()){
 			x += dx *0.2f;
-			System.out.println("giving ball some extra x +speed");
+			//System.out.println("giving ball some extra x +speed");
 		}
 		else{
 			x -= dx *0.2f;
-			System.out.println("giving ball some extra x -speed");
+			//System.out.println("giving ball some extra x -speed");
 		}
 		move(delta);
 		
