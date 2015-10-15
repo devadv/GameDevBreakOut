@@ -69,11 +69,12 @@ public class Game extends BasicGameState {
 		for (Goomba goomba : level01.getRow()) {
 			if (ball.getBounds().intersects(goomba.getBounds())) {
 				System.out.println("Hit");
+				level01.addRemoveList(goomba);
 				ball.moveDown();
 				
 			}
 		}
-
+		level01.getRow().removeAll(level01.getRemoveList());
 	}
 
 	public static Ball getBall() {

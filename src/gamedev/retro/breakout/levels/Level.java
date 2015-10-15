@@ -57,14 +57,22 @@ public class Level {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
+		
 		 
 	}
 	public ArrayList<Goomba> getRow() {
 		return row;
 	}
 
-	public void setRemoveList(ArrayList<Goomba> removeList) {
-		this.removeList = removeList;
+	public void addRemoveList(Goomba goomba) {
+		
+		this.removeList.add(goomba);
+		
+	}
+	public ArrayList<Goomba> getRemoveList(){
+		
+		
+		return removeList;
 	}
 
 	

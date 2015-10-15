@@ -44,10 +44,11 @@ public class Level01 extends Level {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
+		
 		for (Goomba goomba : row) {
 			goomba.update(gc, sbg, delta);
 		}
-
+		
 	}
 
 	
