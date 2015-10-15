@@ -1,6 +1,5 @@
 package gamedev.retro.breakout.entities.enemies;
 
-import gamedev.retro.breakout.Game;
 import gamedev.retro.breakout.entities.Block;
 
 import java.util.ArrayList;
@@ -9,12 +8,13 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Goomba extends Enemy {
 
 	private ArrayList<Block> row;
-	private ArrayList<Block> removeList;
+	private int size;
 
 	public Goomba(float x, float y) {
 		super(x, y);
@@ -24,12 +24,14 @@ public class Goomba extends Enemy {
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		row = new ArrayList<>();
-		removeList = new ArrayList<>();
-		int size = 10;
+		// removeList = new ArrayList<>();
+		size = 4;
 		row.addAll(makeRow(x, y, 4, size, new Color(243, 153, 90)));
 		row.addAll(makeRow(x - size, y + size, 6, size, new Color(243, 153, 90)));
-		row.addAll(makeRow(x - size * 2, y + (size * 2), 8, size, new Color(243, 153, 90)));
-		row.addAll(makeRow(x - size * 3, y + (size * 3), 10, size, new Color(243, 153, 90)));
+		row.addAll(makeRow(x - size * 2, y + (size * 2), 8, size, new Color(
+				243, 153, 90)));
+		row.addAll(makeRow(x - size * 3, y + (size * 3), 10, size, new Color(
+				243, 153, 90)));
 		// begin row 5
 		Color[] colorRow5 = new Color[12];
 		colorRow5[0] = new Color(243, 153, 90);
@@ -184,43 +186,17 @@ public class Goomba extends Enemy {
 
 		}
 
+		 g.drawRect(x-size*6, y, 16*size, 16*size);
+
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
-		for (Block block : row) {
-			if (block.getBounds().intersects(Game.getBall().getBounds())) {
-				if(Game.getBall().isMovingUp()){
-					System.out.println("moveDown!!!!!!");
-					Game.getBall().moveDown();
-					removeList.add(block);
-					if(Game.getBall().isMovingLeft()){
-						Game.getBall().moveRight();
-						
-					}
-					else{
-						Game.getBall().moveLeft();
-					}
-					
-				}
-				
-				else{
-					Game.getBall().moveUp();
-					removeList.add(block);
-					if(Game.getBall().isMovingLeft()){
-						Game.getBall().moveRight();
-						
-					}
-					else{
-						Game.getBall().moveLeft();
-					}
-				}
-				
 
-			}
-
-		}
-row.removeAll(removeList);
 	}
 
+	public Rectangle getBounds() {
+		return new Rectangle(x,y,16*size, 16*size);
+
+	}
 }

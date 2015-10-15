@@ -1,19 +1,22 @@
 package gamedev.retro.breakout.levels;
 
+import gamedev.retro.breakout.entities.Ball;
 import gamedev.retro.breakout.entities.enemies.Goomba;
 
 import java.util.ArrayList;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
 	private ArrayList<Goomba> row;
-	private ArrayList<Goomba> removelist;
+	private ArrayList<Goomba> removeList;
 	private Goomba goomba;
+	
+
 	// private Image image;
 
 	public Level01() {
@@ -21,20 +24,21 @@ public class Level01 extends Level {
 
 	}
 
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-
+	public void init(GameContainer gc, StateBasedGame sbg)
+			throws SlickException {
+		removeList = new ArrayList<Goomba>();
 		row = new ArrayList<>();
-		row.addAll(makeRow(150, 30, 4)); //with 10 items and size block 4px framerate 638
-//		row.addAll(makeRow(30, 70, 10)); //framerate 280
-//		row.addAll(makeRow(30, 110, 10));//framerate 220
-//		row.addAll(makeRow(30, 150, 10));//slow on framerate between 98  - 124
+		row.addAll(makeRow(30, 30, 10));
+		row.addAll(makeRow(30, 90, 10));
+		row.addAll(makeRow(30, 150, 10));
 		for (Goomba goomba : row) {
 			goomba.init(gc, sbg);
 
 		}
 	}
 
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
+			throws SlickException {
 
 		setBackGround(g);
 
@@ -44,11 +48,20 @@ public class Level01 extends Level {
 
 	}
 
-	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+	public void update(GameContainer gc, StateBasedGame sbg, int delta)
+			throws SlickException {
 		for (Goomba goomba : row) {
 			goomba.update(gc, sbg, delta);
 		}
 
+	}
+
+	public ArrayList<Goomba> getRow() {
+		return row;
+	}
+
+	public void setRemoveList(ArrayList<Goomba> removeList) {
+		this.removeList = removeList;
 	}
 
 }

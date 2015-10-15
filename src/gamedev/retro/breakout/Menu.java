@@ -45,8 +45,9 @@ public class Menu extends BasicGameState {
 			throws SlickException {
 		image.draw(0,0,800,600);
 		image1.draw(280,385);
-		ttf.drawString(320, 375, "Start");
-		ttf.drawString(320, 455, "Hightscore");
+		ttf.drawString(300, 375, "Start");
+		ttf.drawString(300, 415, "Hightscore");
+		ttf.drawString(300, 460, "Credits");
 
 	}
 
