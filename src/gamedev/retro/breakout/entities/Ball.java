@@ -60,6 +60,15 @@ public class Ball  {
 		if (y + speed < 0) {
 			moveDown();
 		}
+		
+		if (isMovingUp()){
+			x += dx *0.2f;
+			System.out.println("giving ball some extra x +speed");
+		}
+		else{
+			x -= dx *0.2f;
+			System.out.println("giving ball some extra x -speed");
+		}
 		move(delta);
 		
 	}
@@ -78,6 +87,7 @@ public class Ball  {
 	public void moveUp() {
 		setMovingUp(true);
 		dy = -speed;
+		
 
 	}
 
@@ -120,6 +130,7 @@ public class Ball  {
 
 
 	public void setMovingUp(boolean isMovingUp) {
+		
 		this.isMovingUp = isMovingUp;
 	}
 

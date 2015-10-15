@@ -20,8 +20,8 @@ public class GameState extends StateBasedGame {
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {
 		addState(new Menu(0));
-		//addState(new Game(1));
-		enterState(0);
+		addState(new Game(1));
+		enterState(1);
 
 	}
 
@@ -29,7 +29,7 @@ public class GameState extends StateBasedGame {
 		try {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new GameState("RetroBreakOut"));
-			//appgc.setTargetFrameRate(60);
+			appgc.setTargetFrameRate(60);
 			appgc.setDisplayMode(800, 595, false);
 			appgc.start();
 		} catch (SlickException ex) {
