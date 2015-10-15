@@ -30,6 +30,8 @@ public class GameState extends StateBasedGame {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new GameState("RetroBreakOut"));
 			appgc.setTargetFrameRate(60);
+			appgc.setAlwaysRender(true);
+			appgc.setVSync(true);
 			appgc.setDisplayMode(800, 595, false);
 			appgc.start();
 		} catch (SlickException ex) {
