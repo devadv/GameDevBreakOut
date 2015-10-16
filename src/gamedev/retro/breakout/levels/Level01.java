@@ -12,7 +12,6 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
-
 	public Level01() {
 		super();
 
@@ -44,13 +43,11 @@ public class Level01 extends Level {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
-		
+
 		for (Goomba goomba : row) {
 			goomba.update(gc, sbg, delta);
 		}
-		
-	}
 
-	
+	}
 
 }

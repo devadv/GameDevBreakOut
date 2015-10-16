@@ -10,6 +10,7 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.GameState;
@@ -19,6 +20,7 @@ public class Game extends BasicGameState {
 
 	private Player player;
 	private Level level01;
+//	private Music music;
 	private static Ball ball;
 
 	public Game(int i) {
@@ -37,7 +39,8 @@ public class Game extends BasicGameState {
 		ball.init(gc);
 		ball.setX(player.getX() + 25);
 		ball.setY(player.getY() - 10);
-
+//		music = new Music("res/Overworld.ogg");
+//		music.play();
 	}
 
 	@Override
