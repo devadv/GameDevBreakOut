@@ -9,8 +9,10 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/jars/lwjgl.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="RetroMarioBreakOut/lib/natives/linux"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="RetroMarioBreakOut/lib/native/linux"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/jars/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jorbis-0.0.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
