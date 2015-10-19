@@ -13,7 +13,7 @@ public class GameState extends StateBasedGame {
 
 	public GameState(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+//		 TODO Auto-generated constructor stub
 
 	}
 
@@ -21,7 +21,7 @@ public class GameState extends StateBasedGame {
 	public void initStatesList(GameContainer container) throws SlickException {
 		addState(new Menu(0));
 		addState(new Game(1));
-		enterState(1);
+		enterState(0);
 
 	}
 

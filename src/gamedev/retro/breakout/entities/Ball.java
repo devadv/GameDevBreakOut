@@ -3,11 +3,11 @@ package gamedev.retro.breakout.entities;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 
-
-public class Ball  {
+public class Ball {
 
 	private float x;
 	private float y;
@@ -16,61 +16,66 @@ public class Ball  {
 	private float height = 10;
 	private float dy;
 	private float dx;
-	private float lives =3;
+	private float lives = 3;
 	private boolean gameOver = false;
 	private boolean isMovingLeft = false;
 	private boolean isMovingUp = false;
+	private boolean startBall = false;
 
 	public void init(GameContainer gc) throws SlickException {
 		x = 500;
-		y = 200;
-		dx =speed;
-		dy =speed;
-	}
+		y = 300;
 
+	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		g.setColor(Color.white);
 		g.fillRect(x, y, width, height);
-		if(gameOver){
-			g.drawString("Game Over",400,400);
+		if (gameOver) {
+			g.drawString("Game Over", 400, 400);
 		}
 	}
 
-
 	public void update(GameContainer gc, int delta) throws SlickException {
 
-		
+		Input input = gc.getInput();
 
-		if (x + speed > gc.getWidth() - width) {
-			moveLeft();
+		if (input.isKeyPressed(Input.KEY_SPACE)) {
+			dx = -speed;
+			dy = -speed;
+			startBall = true;
 		}
-		if (x + speed < 0) {
-			moveRight();
-		}
-		if (y + speed > gc.getHeight() - height) {
-			if(lives > 0){
-				init(gc);
-				lives--;
-			}else {
-				gameOver =true;
+
+		if (startBall) {
+
+			if (x + speed > gc.getWidth() - width) {
+				moveLeft();
 			}
-			
+			if (x + speed < 0) {
+				moveRight();
+			}
+			if (y + speed > gc.getHeight() - height) {
+				if (lives > 0) {
+					init(gc);
+					lives--;
+				} else {
+					gameOver = true;
+				}
+
+			}
+			if (y + speed < 0) {
+				moveDown();
+			}
+
+			if (isMovingUp()) {
+				x += dx * 0.2f;
+				// System.out.println("giving ball some extra x +speed");
+			} else {
+				x -= dx * 0.2f;
+				// System.out.println("giving ball some extra x -speed");
+			}
+			move(delta);
 		}
-		if (y + speed < 0) {
-			moveDown();
-		}
-		
-		if (isMovingUp()){
-			x += dx *0.2f;
-			//System.out.println("giving ball some extra x +speed");
-		}
-		else{
-			x -= dx *0.2f;
-			//System.out.println("giving ball some extra x -speed");
-		}
-		move(delta);
-		
 	}
 
 	public void move(int delta) {
@@ -87,7 +92,6 @@ public class Ball  {
 	public void moveUp() {
 		setMovingUp(true);
 		dy = -speed;
-		
 
 	}
 
@@ -100,11 +104,10 @@ public class Ball  {
 		dx = speed;
 		setMovingLeft(false);
 
-
 	}
-	
-	public Rectangle getBounds(){
-		return new Rectangle(x,y,width,height);
+
+	public Rectangle getBounds() {
+		return new Rectangle(x, y, width, height);
 	}
 
 	public float getX() {
@@ -123,27 +126,25 @@ public class Ball  {
 		this.y = y;
 	}
 
-
 	public boolean isMovingUp() {
 		return isMovingUp;
 	}
 
-
 	public void setMovingUp(boolean isMovingUp) {
-		
+
 		this.isMovingUp = isMovingUp;
 	}
-
 
 	public boolean isMovingLeft() {
 		return isMovingLeft;
 	}
 
-
 	public void setMovingLeft(boolean isMovingLeft) {
 		this.isMovingLeft = isMovingLeft;
 	}
-	
 
+	public boolean isStartBall() {
+		return startBall;
+	}
 
 }

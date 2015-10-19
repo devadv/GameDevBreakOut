@@ -1,0 +1,12 @@
+Mario game Over afbeelding 
+game over geluid 
+socore ontwikkelen
+stuiteren van de bal op de goombas 
+aantal levens vermelden in splash screen 
+naam & scoren aan geven in de game
+kiezen tussen de spelers in het menu
+players
+Mario
+Luigi
+Afbeeldingen enemies lijsen
+moelijkheidsgraad

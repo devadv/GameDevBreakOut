@@ -186,8 +186,7 @@ public class Goomba extends Enemy {
 
 		}
 
-		 g.drawRect(x-size*6, y, 16*size, 16*size);
-
+ 
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
@@ -196,7 +195,7 @@ public class Goomba extends Enemy {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x,y,16*size, 16*size);
+		return new Rectangle(x, y, 16 * size, 16 * size);
 
 	}
 }

@@ -20,8 +20,7 @@ public class Game extends BasicGameState {
 
 	private Player player;
 	private Level level01;
-	private Music music;
-//	private Music music;
+	// private Music music;
 	private static Ball ball;
 
 	public Game(int i) {
@@ -38,10 +37,8 @@ public class Game extends BasicGameState {
 		player.init(gc, sbg);
 		ball = new Ball();
 		ball.init(gc);
-		ball.setX(player.getX() + 25);
-		ball.setY(player.getY() - 10);
-		music = new Music("res/Overworld.ogg");
-		music.play();
+		// music = new Music("res/Overworld.ogg");
+		// music.play();
 	}
 
 	@Override
@@ -51,6 +48,12 @@ public class Game extends BasicGameState {
 		level01.render(gc, sbg, g);
 		player.render(gc, sbg, g);
 		ball.render(gc, g);
+		if(!(ball.isStartBall())){
+			ball.setX(player.getX() + 25);
+			ball.setY(player.getY() - 10);
+			
+		}
+		
 
 	}
 
@@ -60,14 +63,9 @@ public class Game extends BasicGameState {
 		player.update(gc, sbg, delta);
 		level01.update(gc, sbg, delta);
 		ball.update(gc, delta);
+		
 		Input input = gc.getInput();
-		if (input.isKeyPressed(Input.KEY_SPACE)) {
-			System.out.println("SPACEKEY");
-			ball.update(gc, delta);
-			ball.moveUp();
-		}
-
-		if (ball.getBounds().intersects(player.getBounds())) {
+	 	if (ball.getBounds().intersects(player.getBounds())) {
 			ball.moveUp();
 		}
 		for (Goomba goomba : level01.getRow()) {
@@ -75,7 +73,7 @@ public class Game extends BasicGameState {
 				System.out.println("Hit");
 				level01.addRemoveList(goomba);
 				ball.moveDown();
-				
+
 			}
 		}
 		level01.getRow().removeAll(level01.getRemoveList());
@@ -87,7 +85,6 @@ public class Game extends BasicGameState {
 
 	@Override
 	public int getID() {
-		// TODO
 		return 1;
 	}
 
