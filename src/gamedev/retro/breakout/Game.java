@@ -2,9 +2,9 @@ package gamedev.retro.breakout;
 
 import gamedev.retro.breakout.entities.Ball;
 import gamedev.retro.breakout.entities.Player;
-import gamedev.retro.breakout.entities.enemies.Goomba;
 import gamedev.retro.breakout.levels.Level;
 import gamedev.retro.breakout.levels.Level01;
+import gamedev.retro.breakout.old.Goomba;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;

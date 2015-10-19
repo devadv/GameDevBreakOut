@@ -1,7 +1,7 @@
 package gamedev.retro.breakout.levels;
 
 import gamedev.retro.breakout.entities.Ball;
-import gamedev.retro.breakout.entities.enemies.Goomba;
+import gamedev.retro.breakout.old.Goomba;
 
 import java.util.ArrayList;
 

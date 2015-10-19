@@ -1,4 +1,4 @@
-package gamedev.retro.breakout.entities.enemies;
+package gamedev.retro.breakout.old;
 
 import gamedev.retro.breakout.entities.Block;
 
