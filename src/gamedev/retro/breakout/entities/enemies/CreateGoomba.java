@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.Color;
 
-public class Enemy {
+public class CreateGoomba {
 
 	protected float y;
 	protected float x;
 
-	public Enemy(float x, float y) {
+	public CreateGoomba(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
