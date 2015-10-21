@@ -70,7 +70,7 @@ public class Menu extends BasicGameState {
 
 		} else {
 			mario.draw(280, 300);
-			ttf1.drawString(380, 320, "x");
+			ttf1.drawString(360, 320, "x");
 			ttf.drawString(300, 200, "Level 1");
 		}
 	}

@@ -12,9 +12,11 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
-	public Level01() {
-		super();
+	
 
+	public Level01(Ball ball) {
+		super(ball);
+		// TODO Auto-generated constructor stub
 	}
 
 	public void init(GameContainer gc, StateBasedGame sbg)
@@ -32,6 +34,7 @@ public class Level01 extends Level {
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
+		super.render(gc, sbg, g);
 
 		setBackGround(g);
 
@@ -43,6 +46,7 @@ public class Level01 extends Level {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
+		super.update(gc, sbg, delta);
 
 		for (Goomba goomba : row) {
 			goomba.update(gc, sbg, delta);

@@ -44,6 +44,7 @@ public class Ball {
 			dx = -speed;
 			dy = -speed;
 			startBall = true;
+			
 		}
 
 		if (startBall) {
@@ -145,6 +146,12 @@ public class Ball {
 
 	public boolean isStartBall() {
 		return startBall;
+	}
+
+	public void isStopBall() {
+		dx = 0;
+		dy = 0;
+		
 	}
 
 }

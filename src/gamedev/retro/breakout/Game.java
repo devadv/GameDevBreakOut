@@ -30,13 +30,12 @@ public class Game extends BasicGameState {
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
-
-		level01 = new Level01();
+		ball = new Ball();
+		ball.init(gc);
+		level01 = new Level01(ball);
 		level01.init(gc, sbg);
 		player = new Player();
 		player.init(gc, sbg);
-		ball = new Ball();
-		ball.init(gc);
 		// music = new Music("res/Overworld.ogg");
 		// music.play();
 	}
