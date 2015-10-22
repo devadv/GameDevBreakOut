@@ -20,7 +20,7 @@ public class Game extends BasicGameState {
 
 	private Player player;
 	private Level level01;
-	// private Music music;
+    private Music music;
 	private static Ball ball;
 
 	public Game(int i) {
@@ -36,8 +36,8 @@ public class Game extends BasicGameState {
 		level01.init(gc, sbg);
 		player = new Player();
 		player.init(gc, sbg);
-		// music = new Music("res/Overworld.ogg");
-		// music.play();
+		music = new Music("res/Overworld.ogg");
+		music.play();
 	}
 
 	@Override

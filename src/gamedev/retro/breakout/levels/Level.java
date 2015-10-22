@@ -9,6 +9,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -20,6 +21,7 @@ public class Level {
 	protected Image image;
 	private Ball ball;
 	private boolean pause = false;
+	private Music music;
 	
 	public Level(Ball ball) {
 		this.ball = ball;
@@ -33,6 +35,8 @@ public class Level {
 
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
+		music = new Music("res/Overworld.ogg");
+		music.play();
 
 	}
 
@@ -62,6 +66,7 @@ public class Level {
 
 	}
 
+	// added pause sound 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
 		Input input = gc.getInput();
@@ -70,6 +75,8 @@ public class Level {
 			System.out.println("Pause");
 			pause = true;
 			System.out.println("Pause"+pause);
+			music = new Music("res/Mario_pause.ogg");
+			music.play();
 		}
 
 	}
