@@ -10,3 +10,4 @@ Mario
 Luigi
 Afbeeldingen enemies lijsen
 moelijkheidsgraad
+Mario & de bal stopt als je op pause drukt

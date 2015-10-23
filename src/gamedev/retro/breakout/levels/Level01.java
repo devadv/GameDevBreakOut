@@ -7,12 +7,15 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
 	
+
+	 
 
 	public Level01(Ball ball) {
 		super(ball);
@@ -50,6 +53,7 @@ public class Level01 extends Level {
 
 		for (Goomba goomba : row) {
 			goomba.update(gc, sbg, delta);
+ 
 		}
 
 	}
