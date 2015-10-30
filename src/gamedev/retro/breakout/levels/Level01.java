@@ -13,10 +13,6 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
-	
-
-	 
-
 	public Level01(Ball ball) {
 		super(ball);
 		// TODO Auto-generated constructor stub

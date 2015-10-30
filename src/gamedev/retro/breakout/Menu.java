@@ -41,8 +41,7 @@ public class Menu extends BasicGameState {
 		try {
 			image = new Image("res/menu.png");
 			menuItem = new Image("res/menuItem.png");
-			SpriteSheet spriteSheet = new SpriteSheet("res/MarioPlayer.png",
-					32, 32);
+			SpriteSheet spriteSheet = new SpriteSheet("res/MarioPlayer.png",32, 32);
 			mario = spriteSheet.getSubImage(0, 2);
 			mario = mario.getFlippedCopy(true, false);
 			mario = mario.getScaledCopy(50, 50);
