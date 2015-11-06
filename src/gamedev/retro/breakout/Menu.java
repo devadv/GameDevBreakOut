@@ -41,10 +41,9 @@ public class Menu extends BasicGameState {
 		try {
 			image = new Image("res/menu.png");
 			menuItem = new Image("res/menuItem.png");
-			SpriteSheet spriteSheet = new SpriteSheet("res/MarioPlayer.png",32, 32);
-			mario = spriteSheet.getSubImage(0, 2);
-			mario = mario.getFlippedCopy(true, false);
-			mario = mario.getScaledCopy(50, 50);
+			SpriteSheet spriteSheet = new SpriteSheet("res/MarioSheet.png",65, 65,2);
+			mario = spriteSheet.getSubImage(0, 0).getFlippedCopy(true, false);
+			mario = mario.getScaledCopy(40, 40);
 
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
@@ -68,7 +67,7 @@ public class Menu extends BasicGameState {
 			ttf.drawString(320, 485, "Credits");
 
 		} else {
-			mario.draw(280, 300);
+			mario.draw(290, 300);
 			ttf1.drawString(360, 320, "x");
 			ttf.drawString(300, 200, "Level 1");
 		}

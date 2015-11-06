@@ -57,7 +57,7 @@ public class Level {
 		if(pause){
 			g.drawString("Pause", 400, 400);
 		}
-	System.out.println("in Render Level");
+ 
 
 	}
 

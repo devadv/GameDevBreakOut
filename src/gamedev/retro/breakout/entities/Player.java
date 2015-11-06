@@ -1,5 +1,6 @@
 package gamedev.retro.breakout.entities;
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -21,26 +22,46 @@ public class Player {
 	private Image marioLeft;
 	private Image marioRight;
 	private boolean isMarioLeft = false;
+	private Image walkLeft;
+	private Image walkRight;
+	private Image walkLeft1;
+	private Image walkRight1;
+	private Animation movingLeft;
+	private Animation movingRight;
+	private boolean isMoving;
 
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		x = gc.getWidth() / 2;
 		y = 490;
-		spriteSheet = new SpriteSheet("res/MarioPlayer.png", 32, 32);
-		marioLeft = spriteSheet.getSubImage(0, 2);
+		spriteSheet = new SpriteSheet("res/MarioSheet.png", 65, 65, 2);
+		marioLeft = spriteSheet.getSprite(0, 0).getScaledCopy(30, 30);
+		;
 		marioRight = marioLeft.getFlippedCopy(true, false);
+		walkLeft = spriteSheet.getSprite(2, 0);
+		walkRight = spriteSheet.getSprite(2, 0).getFlippedCopy(true, false);
+		walkLeft1 = spriteSheet.getSprite(3, 0);
+		walkRight1 = spriteSheet.getSprite(3, 0).getFlippedCopy(true, false);
+		Image[] framesLeft = { walkLeft, walkLeft1 };
+		movingLeft = new Animation(framesLeft, 100);
+		Image[] framesRight = { walkRight, walkRight1 };
 
+		movingRight = new Animation(framesRight, 100);
 	}
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		// g.setColor(Color.red);
-		// g.fillRect(x, y, WIDTH, HEIGHT);
-		// marioLeft.draw(x, y, 2);
-		if (isMarioLeft) {
+		if (isMoving) {
+			if (isMarioLeft) {
+				// marioLeft.draw(x, y, 2);
+				movingLeft.draw(x, y);
+			} else {
+				// marioRight.draw(x, y, 2);
+				movingRight.draw(x, y);
+			}
+
+		}else{
 			marioLeft.draw(x, y, 2);
-		} else {
-			marioRight.draw(x, y, 2);
 		}
 
 	}
@@ -58,6 +79,7 @@ public class Player {
 			if (x > 1) {
 				x = x - speed * delta;
 				isMarioLeft = true;
+				isMoving = true;
 			}
 
 		}
@@ -65,7 +87,14 @@ public class Player {
 			if (x < gc.getWidth() - WIDTH) {
 				x = x + speed * delta;
 				isMarioLeft = false;
+				isMoving = true;
 			}
+
+		}
+
+		if (input.isKeyPressed(Input.KEY_RIGHT)||input.isKeyPressed(Input.KEY_LEFT)) {
+			isMoving = false;
+			
 
 		}
 
