@@ -15,7 +15,7 @@ public class Player {
 
 	private float x;
 	private float y;
-	private float WIDTH = 70;
+	private float WIDTH = 40;
 	private float HEIGHT = 15;
 	private float speed = 0.5f;
 	private SpriteSheet spriteSheet;
@@ -30,8 +30,7 @@ public class Player {
 	private Animation movingRight;
 	private boolean isMoving;
 
-	public void init(GameContainer gc, StateBasedGame sbg)
-			throws SlickException {
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		x = gc.getWidth() / 2;
 		y = 490;
 		spriteSheet = new SpriteSheet("res/MarioSheet.png", 65, 65, 2);
@@ -49,9 +48,9 @@ public class Player {
 		movingRight = new Animation(framesRight, 100);
 	}
 
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
-			throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		if (isMoving) {
+			System.out.println("Moving!");
 			if (isMarioLeft) {
 				// marioLeft.draw(x, y, 2);
 				movingLeft.draw(x, y);
@@ -60,8 +59,12 @@ public class Player {
 				movingRight.draw(x, y);
 			}
 
-		}else{
+		} else if (isMarioLeft) {
 			marioLeft.draw(x, y, 2);
+			System.out.println(" not moving");
+		} else {
+			marioRight.draw(x, y,2);
+			System.out.println(" not moving");
 		}
 
 	}
@@ -71,8 +74,7 @@ public class Player {
 
 	}
 
-	public void update(GameContainer gc, StateBasedGame sbg, int delta)
-			throws SlickException {
+	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
 		Input input = gc.getInput();
 
 		if (input.isKeyDown(Input.KEY_LEFT)) {
@@ -82,19 +84,20 @@ public class Player {
 				isMoving = true;
 			}
 
-		}
-		if (input.isKeyDown(Input.KEY_RIGHT)) {
+		} else if (input.isKeyDown(Input.KEY_RIGHT)) {
 			if (x < gc.getWidth() - WIDTH) {
 				x = x + speed * delta;
 				isMarioLeft = false;
 				isMoving = true;
 			}
 
-		}
-
-		if (input.isKeyPressed(Input.KEY_RIGHT)||input.isKeyPressed(Input.KEY_LEFT)) {
+		} else if (input.isKeyPressed(Input.KEY_LEFT)) {
 			isMoving = false;
-			
+			isMarioLeft = true;
+
+		} else if (input.isKeyPressed(Input.KEY_RIGHT)) {
+			isMoving = false;
+			isMarioLeft = false;
 
 		}
 
