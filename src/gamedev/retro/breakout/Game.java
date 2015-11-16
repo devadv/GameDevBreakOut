@@ -20,11 +20,11 @@ public class Game extends BasicGameState {
 
 	private Player player;
 	private Level level01;
-    private Music music;
+	private Music music;
 	private static Ball ball;
 
 	public Game(int i) {
-		// TODO Auto-generated constructor stub
+		 
 	}
 
 	@Override
@@ -36,8 +36,8 @@ public class Game extends BasicGameState {
 		level01.init(gc, sbg);
 		player = new Player();
 		player.init(gc, sbg);
-		music = new Music("res/Overworld.ogg");
-		music.play();
+		// music = new Music("res/Overworld.ogg");
+		// music.play();
 	}
 
 	@Override
@@ -47,12 +47,11 @@ public class Game extends BasicGameState {
 		level01.render(gc, sbg, g);
 		player.render(gc, sbg, g);
 		ball.render(gc, g);
-		if(!(ball.isStartBall())){
+		if (!(ball.isStartBall())) {
 			ball.setX(player.getX() + 25);
 			ball.setY(player.getY() - 10);
-			
+
 		}
-		
 
 	}
 
@@ -62,9 +61,9 @@ public class Game extends BasicGameState {
 		player.update(gc, sbg, delta);
 		level01.update(gc, sbg, delta);
 		ball.update(gc, delta);
-		
+
 		Input input = gc.getInput();
-	 	if (ball.getBounds().intersects(player.getBounds())) {
+		if (ball.getBounds().intersects(player.getBounds())) {
 			ball.moveUp();
 		}
 		for (Goomba goomba : level01.getRow()) {

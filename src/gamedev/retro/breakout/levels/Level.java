@@ -21,7 +21,7 @@ public class Level {
 	protected Image image;
 	private Ball ball;
 	private boolean pause = false;
-	//private Music music;
+	private Music music;
 	
 	public Level(Ball ball) {
 		this.ball = ball;
@@ -35,8 +35,8 @@ public class Level {
 
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
-//		music = new Music("res/Overworld.ogg");
-//		music.play();
+		music = new Music("res/Overworld.ogg");
+		music.play();
 
 	}
 

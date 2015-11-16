@@ -29,26 +29,31 @@ public class Player {
 	private Animation movingLeft;
 	private Animation movingRight;
 	private boolean isMoving;
+	private Image walkLeft2;
+	private Image walkRight2;
 
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+	public void init(GameContainer gc, StateBasedGame sbg)
+			throws SlickException {
 		x = gc.getWidth() / 2;
 		y = 490;
 		spriteSheet = new SpriteSheet("res/MarioSheet.png", 65, 65, 2);
 		marioLeft = spriteSheet.getSprite(0, 0).getScaledCopy(30, 30);
-		;
 		marioRight = marioLeft.getFlippedCopy(true, false);
-		walkLeft = spriteSheet.getSprite(2, 0);
-		walkRight = spriteSheet.getSprite(2, 0).getFlippedCopy(true, false);
-		walkLeft1 = spriteSheet.getSprite(3, 0);
-		walkRight1 = spriteSheet.getSprite(3, 0).getFlippedCopy(true, false);
-		Image[] framesLeft = { walkLeft, walkLeft1 };
-		movingLeft = new Animation(framesLeft, 100);
+		walkLeft = spriteSheet.getSprite(4, 0);
+		walkRight = spriteSheet.getSprite(4, 0).getFlippedCopy(true, false);
+		walkLeft1 = spriteSheet.getSprite(2, 0);
+		walkRight1 = spriteSheet.getSprite(2, 0).getFlippedCopy(true, false);
+		walkLeft2 = spriteSheet.getSprite(3, 0);
+		walkRight2 = spriteSheet.getSprite(3, 0).getFlippedCopy(true, false);
+		Image[] framesLeft = { walkLeft, walkLeft1, walkLeft2 };
+		movingLeft = new Animation(framesLeft, 200);
 		Image[] framesRight = { walkRight, walkRight1 };
 
-		movingRight = new Animation(framesRight, 100);
+		movingRight = new Animation(framesRight, 200);
 	}
 
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
+			throws SlickException {
 		if (isMoving) {
 			System.out.println("Moving!");
 			if (isMarioLeft) {
@@ -63,7 +68,7 @@ public class Player {
 			marioLeft.draw(x, y, 2);
 			System.out.println(" not moving");
 		} else {
-			marioRight.draw(x, y,2);
+			marioRight.draw(x, y, 2);
 			System.out.println(" not moving");
 		}
 
@@ -74,7 +79,8 @@ public class Player {
 
 	}
 
-	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+	public void update(GameContainer gc, StateBasedGame sbg, int delta)
+			throws SlickException {
 		Input input = gc.getInput();
 
 		if (input.isKeyDown(Input.KEY_LEFT)) {
@@ -85,7 +91,7 @@ public class Player {
 			}
 
 		} else if (input.isKeyDown(Input.KEY_RIGHT)) {
-			if (x < gc.getWidth() - WIDTH) {
+			if (x < gc.getWidth() - WIDTH - 20) {
 				x = x + speed * delta;
 				isMarioLeft = false;
 				isMoving = true;

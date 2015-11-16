@@ -21,6 +21,7 @@ public class Ball {
 	private boolean isMovingLeft = false;
 	private boolean isMovingUp = false;
 	private boolean startBall = false;
+	private boolean minusLife = false;
 
 	public void init(GameContainer gc) throws SlickException {
 		x = 500;
@@ -57,7 +58,7 @@ public class Ball {
 			}
 			if (y + speed > gc.getHeight() - height) {
 				if (lives > 0) {
-					init(gc);
+					 setMinusLife(true);
 					lives--;
 				} else {
 					gameOver = true;
@@ -152,6 +153,14 @@ public class Ball {
 		dx = 0;
 		dy = 0;
 		
+	}
+
+	public boolean isMinusLife() {
+		return minusLife;
+	}
+
+	public void setMinusLife(boolean minusLife) {
+		this.minusLife = minusLife;
 	}
 
 }
