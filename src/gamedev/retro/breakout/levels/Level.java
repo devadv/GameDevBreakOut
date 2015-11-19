@@ -1,7 +1,8 @@
 package gamedev.retro.breakout.levels;
 
 import gamedev.retro.breakout.entities.Ball;
-import gamedev.retro.breakout.old.Goomba;
+import gamedev.retro.breakout.entities.enemies.Enemy;
+import gamedev.retro.breakout.entities.enemies.Turtle;
 
 import java.util.ArrayList;
 
@@ -11,12 +12,11 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Level {
+public abstract class Level {
 
-	
-	protected ArrayList<Goomba> row;
-	protected ArrayList<Goomba> removeList;
-	protected static ArrayList<Goomba> goombas;
+	protected ArrayList<Enemy> row;
+	protected ArrayList<Enemy> removeList;
+	protected static ArrayList<Enemy> Enemies;
 	protected Image image;
 
 	public Level() {
@@ -28,53 +28,31 @@ public class Level {
 		}
 	}
 
-	public void init(GameContainer gc, StateBasedGame sbg)
-			throws SlickException {
+	public abstract void init(GameContainer gc, StateBasedGame sbg)
+			throws SlickException;
 
-	}
+	public abstract ArrayList<Enemy> makeRow(int x, int y, int aantal);
 
-	public ArrayList<Goomba> makeRow(int x, int y, int aantal) {
-		ArrayList<Goomba> goombas = new ArrayList<Goomba>();
+	public abstract void render(GameContainer gc, StateBasedGame sbg, Graphics g)
+			throws SlickException;
 
-		for (int i = 0; i < aantal; i++) {
-			goombas.add(new Goomba(x, y));
-			x += 80;
-		}
-
-		return goombas;
-
-	}
-
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
-			throws SlickException {
-
-	}
+	public abstract void update(GameContainer gc, StateBasedGame sbg, int delta)
+			throws SlickException;
 
 	public void setBackGround(Graphics g) {
 		g.drawImage(image, 0, 0);
-
 	}
 
-	public void update(GameContainer gc, StateBasedGame sbg, int delta)
-			throws SlickException {
-		
-		 
-	}
-	public ArrayList<Goomba> getRow() {
+	public ArrayList<Enemy> getRow() {
 		return row;
 	}
 
-	public void addRemoveList(Goomba goomba) {
-		
-		this.removeList.add(goomba);
-		
-	}
-	public ArrayList<Goomba> getRemoveList(){
-		
-		
-		return removeList;
+	public void addRemoveList(Enemy Enemy) {
+		this.removeList.add(Enemy);
 	}
 
-	
+	public ArrayList<Enemy> getRemoveList() {
+		return removeList;
+	}
 
 }

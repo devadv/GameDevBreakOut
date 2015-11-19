@@ -2,8 +2,10 @@ package gamedev.retro.breakout;
 
 import gamedev.retro.breakout.entities.Ball;
 import gamedev.retro.breakout.entities.Player;
+import gamedev.retro.breakout.entities.enemies.Enemy;
 import gamedev.retro.breakout.levels.Level;
 import gamedev.retro.breakout.levels.Level01;
+import gamedev.retro.breakout.levels.Level02;
 import gamedev.retro.breakout.old.Goomba;
 
 import org.newdawn.slick.Color;
@@ -68,7 +70,7 @@ public class Game extends BasicGameState {
 	 	if (ball.getBounds().intersects(player.getBounds())) {
 			ball.moveUp();
 		}
-		for (Goomba goomba : level01.getRow()) {
+		for (Enemy goomba : level01.getRow()) {
 			if (ball.getBounds().intersects(goomba.getBounds())) {
 				System.out.println("Hit");
 				level01.addRemoveList(goomba);
