@@ -10,10 +10,11 @@ public class Goomba extends Enemy {
 
 	private Image goomba;
 
-	public Goomba(float x, float y) {
-		super(x, y);
+	public Goomba(float x, float y, Image image) {
+		super(x, y, image);
 		this.x = x ;
 		this.y = y;
+		this.goomba = image;
 	}
 
 	@Override

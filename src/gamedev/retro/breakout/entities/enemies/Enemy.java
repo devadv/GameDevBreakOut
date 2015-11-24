@@ -2,6 +2,7 @@ package gamedev.retro.breakout.entities.enemies;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
@@ -16,7 +17,7 @@ public abstract class Enemy {
 	protected float WIDTH;
 	protected float HEIGHT;
 	
-	public Enemy(float x, float y){
+	public Enemy(float x, float y, Image image){
 		this.x = x ;
 		this.y = y;
 		
