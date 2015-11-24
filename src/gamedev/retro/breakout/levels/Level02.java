@@ -13,6 +13,11 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level02 extends Level {
 
+	public Level02() throws SlickException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
@@ -34,7 +39,7 @@ public class Level02 extends Level {
 
 		for (int i = 0; i < aantal; i++) {
 		
-			Enemies.add(new Goomba(x,y));
+			Enemies.add(new Goomba(x,y,Buzzy_Beetle));
 			x += 75;
 		}
 

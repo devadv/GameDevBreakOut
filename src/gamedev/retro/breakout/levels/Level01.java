@@ -14,7 +14,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
-	public Level01() {
+	public Level01() throws SlickException {
 		super();
 
 	}
@@ -23,9 +23,9 @@ public class Level01 extends Level {
 
 		for (int i = 0; i < aantal; i++) {
 			if(i%2==0){
-			Enemies.add(new Turtle(x,y));
+			Enemies.add(new Turtle(x,y, Buzzy_Beetle));
 			}else{
-				Enemies.add(new Goomba(x,y));
+				Enemies.add(new Goomba(x,y, Buzzy_Beetle));
 			}
 			x += 75;
 		}

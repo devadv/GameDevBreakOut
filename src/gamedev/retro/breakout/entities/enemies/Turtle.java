@@ -10,8 +10,8 @@ public class Turtle extends Enemy{
 
 	private Image turtle;
 
-	public Turtle(float x , float y) {
-		super(x, y);
+	public Turtle(float x , float y, Image image) {
+		super(x, y, image);
 		this.x = x ;
 		this.y = y;
 		
@@ -20,7 +20,7 @@ public class Turtle extends Enemy{
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
-		turtle = new Image("res/turtle.png");
+		turtle = MarioSheet.Buzzy_Beetle; 
 		WIDTH = HEIGHT = 60;
 		
 	}

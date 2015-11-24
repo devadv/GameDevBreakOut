@@ -10,6 +10,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.StateBasedGame;
 
 public abstract class Level {
@@ -18,14 +19,19 @@ public abstract class Level {
 	protected ArrayList<Enemy> removeList;
 	protected static ArrayList<Enemy> Enemies;
 	protected Image image;
+	private SpriteSheet sheet;
+	protected Image Buzzy_Beetle;
 
-	public Level() {
+	public Level() throws SlickException {
 		try {
 			image = new Image("res/bg.png");
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		sheet = new SpriteSheet(new Image("res/enemies.png"), 2, 2);
+		Buzzy_Beetle = sheet.getSubImage(65, 65);
 	}
 
 	public abstract void init(GameContainer gc, StateBasedGame sbg)
