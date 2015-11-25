@@ -6,6 +6,8 @@ import gamedev.retro.breakout.entities.enemies.Turtle;
 
 import java.util.ArrayList;
 
+import javagame.retro.breakout.assets.Sprites;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -18,9 +20,8 @@ public abstract class Level {
 	protected ArrayList<Enemy> row;
 	protected ArrayList<Enemy> removeList;
 	protected static ArrayList<Enemy> Enemies;
-	protected Image image;
-	private SpriteSheet sheet;
-	protected Image Buzzy_Beetle;
+	
+	private Image image;
 
 	public Level() throws SlickException {
 		try {
@@ -30,8 +31,7 @@ public abstract class Level {
 			e.printStackTrace();
 		}
 
-		sheet = new SpriteSheet(new Image("res/enemies.png"), 2, 2);
-		Buzzy_Beetle = sheet.getSubImage(65, 65);
+		 
 	}
 
 	public abstract void init(GameContainer gc, StateBasedGame sbg)

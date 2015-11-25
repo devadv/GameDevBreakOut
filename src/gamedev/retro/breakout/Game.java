@@ -73,10 +73,14 @@ public class Game extends BasicGameState {
 	 	if (ball.getBounds().intersects(player.getBounds())) {
 			ball.moveUp();
 		}
-		for (Enemy goomba : level01.getRow()) {
-			if (ball.getBounds().intersects(goomba.getBounds())) {
-				System.out.println("Hit");
-				level01.addRemoveList(goomba);
+		for (Enemy enemy : level01.getRow()) {
+			if (ball.getBounds().intersects(enemy.getBounds())) {
+				//System.out.println("Hit");
+				if(enemy.getStrength()<1){
+				level01.addRemoveList(enemy);
+				}else{
+					enemy.decrementStrength();
+				}
 				ball.moveDown();
 
 			}

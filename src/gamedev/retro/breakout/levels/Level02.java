@@ -6,6 +6,8 @@ import gamedev.retro.breakout.entities.enemies.Turtle;
 
 import java.util.ArrayList;
 
+import javagame.retro.breakout.assets.Sprites;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -13,9 +15,11 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level02 extends Level {
 
+	private Sprites sprites;
+
 	public Level02() throws SlickException {
 		super();
-		// TODO Auto-generated constructor stub
+		sprites = new Sprites();
 	}
 
 	@Override
@@ -39,7 +43,7 @@ public class Level02 extends Level {
 
 		for (int i = 0; i < aantal; i++) {
 		
-			Enemies.add(new Goomba(x,y,Buzzy_Beetle));
+			Enemies.add(new Goomba(x,y,sprites.enemy3));
 			x += 75;
 		}
 

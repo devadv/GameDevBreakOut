@@ -16,6 +16,7 @@ public abstract class Enemy {
 	protected float y;
 	protected float WIDTH;
 	protected float HEIGHT;
+	protected int strength;
 	
 	public Enemy(float x, float y, Image image){
 		this.x = x ;
@@ -68,6 +69,14 @@ public abstract class Enemy {
 
 		public void setHEIGHT(float hEIGHT) {
 			HEIGHT = hEIGHT;
+		}
+
+		public int getStrength() {
+			return strength;
+		}
+
+		public void decrementStrength() {
+			this.strength--;
 		}
 
 		

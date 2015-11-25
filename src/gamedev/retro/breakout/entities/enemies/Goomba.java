@@ -15,12 +15,13 @@ public class Goomba extends Enemy {
 		this.x = x ;
 		this.y = y;
 		this.goomba = image;
+		strength= 1;
 	}
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
-		goomba = new Image("res/goomba.png");
+		
 		WIDTH = HEIGHT = 60;
 
 	}
@@ -29,7 +30,7 @@ public class Goomba extends Enemy {
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		goomba.draw(x, y, WIDTH, HEIGHT);
-
+		
 	}
 
 	@Override
