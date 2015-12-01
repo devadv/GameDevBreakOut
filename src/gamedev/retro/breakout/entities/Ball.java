@@ -39,12 +39,15 @@ public class Ball {
 	public void update(GameContainer gc, int delta) throws SlickException {
 
 		Input input = gc.getInput();
-
-		if (input.isKeyPressed(Input.KEY_SPACE)) {
-			dx = -speed;
-			dy = -speed;
-			startBall = true;
+		if (!startBall){
+			if (input.isKeyPressed(Input.KEY_SPACE)) {
+				dx = -speed;
+				dy = -speed;
+				startBall = true;
+			}
+			
 		}
+		
 
 		if (startBall) {
 

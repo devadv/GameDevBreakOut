@@ -76,6 +76,7 @@ public class Game extends BasicGameState {
 		for (Enemy enemy : level01.getRow()) {
 			if (ball.getBounds().intersects(enemy.getBounds())) {
 				//System.out.println("Hit");
+				// als de kracht kleiner is dan 1 voeg toe aan removeList
 				if(enemy.getStrength()<1){
 				level01.addRemoveList(enemy);
 				}else{

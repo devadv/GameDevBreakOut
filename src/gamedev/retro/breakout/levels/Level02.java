@@ -27,27 +27,25 @@ public class Level02 extends Level {
 			throws SlickException {
 		removeList = new ArrayList<Enemy>();
 		row = new ArrayList<>();
+		//een enemy op positie x = 30 y = 30 met afbeelding Buzzy Beetle en een kracht van 1 (strength)
+		//dat betekent 2x raken
 		row.add(new SubEnemy(30, 30, sprites.Buzzy_Beetle, 1));
+		//enemy positie x = 120 en y = 30 met een strenght van 2 dat betekent 3x raken
 		row.add(new SubEnemy(120, 30, sprites.Buzzy_Beetle, 2));
+		//enemy positie x = 200 met afbeelding mario en strength 3 betekent 4 x raken
 		row.add(new SubEnemy(200, 30, sprites.Mario, 3));
-		for (Enemy goomba : row) {
-			goomba.init(gc, sbg);
-			System.out.println(goomba.getX() + " " + goomba.getY());
+		//makeRow(int x, int y, int aantal, Image sprite, int strength) een rij met 
+		//4 enemies van het type coin en strength van 2 = 3 x raken
+		row.addAll(makeRow(30, 100, 4, sprites.Coin,2));
+		//makeRow(int x, int y, int aantal, Image sprite)
+		row.addAll(makeRow(320, 100 , 4, sprites.fishGray));
+		//makeRow(int x, int y, int aantal, Image sprite, int strength)
+		row.addAll(makeRow(30, 170, 4, sprites.Coin,2));
+		
+		for (Enemy enemy : row) {
+			enemy.init(gc, sbg);
+			System.out.println(enemy.getX() + " " + enemy.getY());
 		}
-
-	}
-
-	@Override
-	public ArrayList<Enemy> makeRow(int x, int y, int aantal , Image sprite) {
-		ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-
-		for (int i = 0; i < aantal; i++) {
-
-			Enemies.add(new SubEnemy(x, y, sprites.Goomba ,1));
-			x += 75;
-		}
-
-		return Enemies;
 
 	}
 
@@ -55,8 +53,8 @@ public class Level02 extends Level {
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		setBackGround(g);
-		for (Enemy goomba : row) {
-			goomba.render(gc, sbg, g);
+		for (Enemy enemy : row) {
+			enemy.render(gc, sbg, g);
 		}
 
 	}
@@ -64,8 +62,8 @@ public class Level02 extends Level {
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
-		for (Enemy goomba : row) {
-			goomba.update(gc, sbg, delta);
+		for (Enemy enemy : row) {
+			enemy.update(gc, sbg, delta);
 		}
 
 	}

@@ -37,15 +37,27 @@ public abstract class Level {
 
 	public ArrayList<Enemy> makeRow(int x, int y, int aantal , Image sprite) {
 		ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-
+		int strength = 0;
 		for (int i = 0; i < aantal; i++) {
-
-			Enemies.add(new SubEnemy(x, y, sprite ,1));
+			Enemies.add(new SubEnemy(x, y, sprite ,strength));
 			x += 75;
 		}
 
 		return Enemies;
 
+	}
+	public ArrayList<Enemy> makeRow(int x, int y, int aantal, Image sprite,
+			int strength) {
+		ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
+
+		for (int i = 0; i < aantal; i++) {
+
+			Enemies.add(new SubEnemy(x, y, sprite ,strength));
+			x += 75;
+		}
+
+		return Enemies;
+		
 	}
 
 	public abstract void render(GameContainer gc, StateBasedGame sbg, Graphics g)
@@ -69,5 +81,7 @@ public abstract class Level {
 	public ArrayList<Enemy> getRemoveList() {
 		return removeList;
 	}
+
+	
 
 }
