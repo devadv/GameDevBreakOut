@@ -1,7 +1,7 @@
 package gamedev.retro.breakout.levels;
 
 import gamedev.retro.breakout.entities.enemies.Enemy;
-import gamedev.retro.breakout.entities.enemies.Goomba;
+
 import gamedev.retro.breakout.entities.enemies.SubEnemy;
 
 import java.util.ArrayList;
@@ -27,10 +27,10 @@ public class Level01 extends Level {
 
 		for (int i = 0; i < aantal; i++) {
 			if (i % 2 == 0) {
-				Enemies.add(new SubEnemy(x, y, sprites.Buzzy_Beetle,1));
+				Enemies.add(new SubEnemy(x, y, sprites.Buzzy_Beetle, 1));
 
 			} else {
-				Enemies.add(new SubEnemy(x, y, sprites.Goomba,0));
+				Enemies.add(new SubEnemy(x, y, sprites.Goomba, 0));
 				System.out.println("make Goomba");
 			}
 			x += 75;

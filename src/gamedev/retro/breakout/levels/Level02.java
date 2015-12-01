@@ -1,7 +1,6 @@
 package gamedev.retro.breakout.levels;
 
 import gamedev.retro.breakout.entities.enemies.Enemy;
-import gamedev.retro.breakout.entities.enemies.Goomba;
 import gamedev.retro.breakout.entities.enemies.SubEnemy;
 
 import java.util.ArrayList;
@@ -10,6 +9,7 @@ import javagame.retro.breakout.assets.Sprites;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -27,29 +27,28 @@ public class Level02 extends Level {
 			throws SlickException {
 		removeList = new ArrayList<Enemy>();
 		row = new ArrayList<>();
-		row.add(new SubEnemy(30,30, sprites.Buzzy_Beetle,1));
-		row.add(new SubEnemy(120,30, sprites.Buzzy_Beetle,2));
-		row.add(new SubEnemy(200,30, sprites.Mario,3));
+		row.add(new SubEnemy(30, 30, sprites.Buzzy_Beetle, 1));
+		row.add(new SubEnemy(120, 30, sprites.Buzzy_Beetle, 2));
+		row.add(new SubEnemy(200, 30, sprites.Mario, 3));
 		for (Enemy goomba : row) {
 			goomba.init(gc, sbg);
-			System.out.println(goomba.getX() +" " + goomba.getY());
+			System.out.println(goomba.getX() + " " + goomba.getY());
 		}
 
 	}
 
 	@Override
-	public ArrayList<Enemy> makeRow(int x, int y, int aantal) {
+	public ArrayList<Enemy> makeRow(int x, int y, int aantal , Image sprite) {
 		ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 
 		for (int i = 0; i < aantal; i++) {
-		
-			Enemies.add(new Goomba(x,y,sprites.Goomba));
+
+			Enemies.add(new SubEnemy(x, y, sprites.Goomba ,1));
 			x += 75;
 		}
 
 		return Enemies;
 
-	
 	}
 
 	@Override
@@ -60,7 +59,6 @@ public class Level02 extends Level {
 			goomba.render(gc, sbg, g);
 		}
 
-
 	}
 
 	@Override
@@ -69,7 +67,6 @@ public class Level02 extends Level {
 		for (Enemy goomba : row) {
 			goomba.update(gc, sbg, delta);
 		}
-
 
 	}
 

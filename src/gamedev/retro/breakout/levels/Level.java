@@ -30,14 +30,23 @@ public abstract class Level {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		 
 	}
 
 	public abstract void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException;
 
-	public abstract ArrayList<Enemy> makeRow(int x, int y, int aantal);
+	public ArrayList<Enemy> makeRow(int x, int y, int aantal , Image sprite) {
+		ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
+
+		for (int i = 0; i < aantal; i++) {
+
+			Enemies.add(new SubEnemy(x, y, sprite ,1));
+			x += 75;
+		}
+
+		return Enemies;
+
+	}
 
 	public abstract void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException;
