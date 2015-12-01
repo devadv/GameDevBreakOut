@@ -38,8 +38,10 @@ public class Level02 extends Level {
 		//4 enemies van het type coin en strength van 2 = 3 x raken
 		row.addAll(makeRow(30, 100, 4, sprites.Coin,2));
 		//makeRow(int x, int y, int aantal, Image sprite)
+		//een rij op dezelfde hoogte van type fishGray and default strength =0 betekent 1 keer raken
 		row.addAll(makeRow(320, 100 , 4, sprites.fishGray));
 		//makeRow(int x, int y, int aantal, Image sprite, int strength)
+		//ect.
 		row.addAll(makeRow(30, 170, 4, sprites.Coin,2));
 		
 		for (Enemy enemy : row) {
