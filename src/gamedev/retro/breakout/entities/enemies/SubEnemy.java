@@ -7,16 +7,16 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Turtle extends Enemy{
+public class SubEnemy extends Enemy{
 
-	private Image turtle;
+	private Image img;
 
-	public Turtle(float x , float y, Image image) {
+	public SubEnemy(float x , float y, Image image, int strenght) {
 		super(x, y, image);
-		this.turtle = image;
+		this.img = image;
 		this.x = x ;
 		this.y = y;
-		strength=0;
+		this.strength=strenght;
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class Turtle extends Enemy{
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		turtle.draw(x,y,WIDTH,HEIGHT);
+		img.draw(x,y,WIDTH,HEIGHT);
 		
 	}
 

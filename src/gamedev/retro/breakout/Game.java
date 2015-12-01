@@ -35,7 +35,7 @@ public class Game extends BasicGameState {
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 
-		level01 = new Level01();
+		level01 = new Level02();
 		level01.init(gc, sbg);
 		player = new Player();
 		player.init(gc, sbg);

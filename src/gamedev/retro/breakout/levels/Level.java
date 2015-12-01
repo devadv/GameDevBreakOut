@@ -2,7 +2,7 @@ package gamedev.retro.breakout.levels;
 
 import gamedev.retro.breakout.entities.Ball;
 import gamedev.retro.breakout.entities.enemies.Enemy;
-import gamedev.retro.breakout.entities.enemies.Turtle;
+import gamedev.retro.breakout.entities.enemies.SubEnemy;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,8 @@
 package gamedev.retro.breakout.levels;
 
-
 import gamedev.retro.breakout.entities.enemies.Enemy;
 import gamedev.retro.breakout.entities.enemies.Goomba;
-import gamedev.retro.breakout.entities.enemies.Turtle;
+import gamedev.retro.breakout.entities.enemies.SubEnemy;
 
 import java.util.ArrayList;
 
@@ -16,7 +15,6 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Level01 extends Level {
 
-	
 	private Sprites sprites;
 
 	public Level01() throws SlickException {
@@ -26,18 +24,18 @@ public class Level01 extends Level {
 
 	public ArrayList<Enemy> makeRow(int x, int y, int aantal) {
 		ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-		
+
 		for (int i = 0; i < aantal; i++) {
-			if(i%2==0){
-			Enemies.add(new Turtle(x,y, sprites.enemy1));
-			
-			}else{
-				Enemies.add(new Goomba(x,y, sprites.enemy3));
+			if (i % 2 == 0) {
+				Enemies.add(new SubEnemy(x, y, sprites.Buzzy_Beetle,1));
+
+			} else {
+				Enemies.add(new SubEnemy(x, y, sprites.Goomba,0));
 				System.out.println("make Goomba");
 			}
 			x += 75;
 		}
-		
+
 		return Enemies;
 
 	}
@@ -51,14 +49,14 @@ public class Level01 extends Level {
 		row.addAll(makeRow(30, 150, 10));
 		for (Enemy enemies : row) {
 			enemies.init(gc, sbg);
-			//System.out.println(enemies.getX() +" " + enemies.getY());
+			// System.out.println(enemies.getX() +" " + enemies.getY());
 		}
-		
+
 	}
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		
+
 		setBackGround(g);
 
 		for (Enemy enemies : row) {

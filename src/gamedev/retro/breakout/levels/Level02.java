@@ -2,7 +2,7 @@ package gamedev.retro.breakout.levels;
 
 import gamedev.retro.breakout.entities.enemies.Enemy;
 import gamedev.retro.breakout.entities.enemies.Goomba;
-import gamedev.retro.breakout.entities.enemies.Turtle;
+import gamedev.retro.breakout.entities.enemies.SubEnemy;
 
 import java.util.ArrayList;
 
@@ -27,9 +27,9 @@ public class Level02 extends Level {
 			throws SlickException {
 		removeList = new ArrayList<Enemy>();
 		row = new ArrayList<>();
-		row.addAll(makeRow(30, 30, 10));
-		row.addAll(makeRow(30, 90, 10));
-		row.addAll(makeRow(30, 150, 10));
+		row.add(new SubEnemy(30,30, sprites.Buzzy_Beetle,1));
+		row.add(new SubEnemy(120,30, sprites.Buzzy_Beetle,2));
+		row.add(new SubEnemy(200,30, sprites.Mario,3));
 		for (Enemy goomba : row) {
 			goomba.init(gc, sbg);
 			System.out.println(goomba.getX() +" " + goomba.getY());
@@ -43,7 +43,7 @@ public class Level02 extends Level {
 
 		for (int i = 0; i < aantal; i++) {
 		
-			Enemies.add(new Goomba(x,y,sprites.enemy3));
+			Enemies.add(new Goomba(x,y,sprites.Goomba));
 			x += 75;
 		}
 
